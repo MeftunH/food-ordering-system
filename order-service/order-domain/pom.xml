@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>order-domain</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>order-domain-core</module>
+        <module>order-application-service</module>
+    </modules>
 
     <properties>
     </properties>
