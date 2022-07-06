@@ -28,6 +28,7 @@ public class OrderDomainServiceImpl implements OrderDomainService {
 
     //for cross check
     //n squared time complexity
+    // TODO: 7/7/2022 refactor to hashmap for increase performance and decrease time complexity
     private void setOrderProductInformation(Order order, Restaurant restaurant) {
         order.getItems().forEach(orderItem -> restaurant.getProducts().forEach(restaurantProduct ->{
             Product currentProduct = orderItem.getProduct();
