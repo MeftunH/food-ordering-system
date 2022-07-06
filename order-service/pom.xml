@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>food-ordering-system</artifactId>
-        <groupId>org.food-ordering-system</groupId>
+        <groupId>com.food.ordering.system</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,12 +14,13 @@
     <modules>
         <module>order-domain</module>
         <module>order-application</module>
-        <module>order-data-access</module>
+        <module>order-dataaccess</module>
         <module>order-messaging</module>
         <module>order-container</module>
     </modules>
 
     <properties>
+
     </properties>
 
 </project>
