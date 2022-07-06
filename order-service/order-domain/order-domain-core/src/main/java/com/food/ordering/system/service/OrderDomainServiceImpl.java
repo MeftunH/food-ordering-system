@@ -16,6 +16,8 @@ import java.util.List;
 @Slf4j
 public class OrderDomainServiceImpl implements OrderDomainService {
 
+    private static final String UTC = "UTC";
+
     @Override
     public OrderCreatedEvent validateInitializeOrder(Order order, Restaurant restaurant) {
         validateRestaurant(restaurant);
@@ -23,7 +25,7 @@ public class OrderDomainServiceImpl implements OrderDomainService {
         order.validateOrder();
         order.initializeOrder();
         log.info("Order with id: {} has been initialized", order.getId());
-        return new OrderCreatedEvent(order, ZonedDateTime.now(ZoneId.of("UTC")));
+        return new OrderCreatedEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
     }
 
     //for cross check
@@ -50,7 +52,7 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     public OrderPaidEvent payOrder(Order order) {
         order.pay();
         log.info("Order with id: {} has been paid", order.getId().getValue());
-        return new OrderPaidEvent(order, ZonedDateTime.now(ZoneId.of("UTC")));
+        return new OrderPaidEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
     }
 
     @Override
@@ -63,7 +65,7 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     public OrderCancelledEvent cancelOrderPayment(Order order, List<String> failureMessages) {
         order.initCancel(failureMessages);
         log.info("Order with id: {} has been cancelled", order.getId().getValue());
-        return new OrderCancelledEvent(order, ZonedDateTime.now(ZoneId.of("UTC")));
+        return new OrderCancelledEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
     }
 
     @Override
