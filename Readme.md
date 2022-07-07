@@ -1,4 +1,4 @@
-### Into Progress Clean Architecture Microservice Project
+### Into Progress Clean And Hexagonal Architecture Microservice Project
 
 ### Project scheme
 ![order_service](https://user-images.githubusercontent.com/48466124/177784427-72e411f6-14c3-4995-b24f-c6ebe48a8e39.png)
